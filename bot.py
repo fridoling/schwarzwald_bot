@@ -14,6 +14,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+PORT = int(os.environ.get('PORT', 5000))
+
 KOM = 0
 
 API_key = os.getenv('API_key')
@@ -163,7 +165,12 @@ def main():
                                   pass_args=True,
                                   pass_job_queue=True,
                                   pass_chat_data=True))
-    updater.start_polling()
+
+    updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=API_key)
+    updater.bot.setWebhook('https://schwarzwald-bot.herokuapp.com/' + API_key)
+
     updater.idle()
     
 if __name__ == '__main__':
