@@ -56,7 +56,7 @@ def start(update, context):
     "/wetter - s'wetter in dr Fraidastadt\n"
     "/schwaetz - no schwaetz i mit\n"
     "/witz - no vrzehl i en witz\n"
-    "/hond - no schick i's bildle von em hond\n")
+    "/hond - no schick i's bildle von em hond\n"
     "/katz - no schick i's bildle vorer katz\n")
 
 
