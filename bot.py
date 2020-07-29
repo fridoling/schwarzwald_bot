@@ -6,7 +6,7 @@ import re
 import random
 import datetime
 import numpy as np
-import config
+import os
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -15,6 +15,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 KOM = 0
+
+API_key = os.getenv('API_key')
 
 def wetter(update, context):
     r = requests.get('http://api.openweathermap.org/data/2.5/weather?q=Freudenstadt,DE&appid=0bc532c546f93f5a78c999d5b5362485')
@@ -137,7 +139,7 @@ def deilapp(update, context):
 
 
 def main():
-    updater = Updater(config.API_key, use_context=True)
+    updater = Updater(API_key, use_context=True)
     dp = updater.dispatcher
 
     conv_handler = ConversationHandler(
