@@ -57,6 +57,7 @@ def start(update, context):
     "/schwaetz - no schwaetz i mit\n"
     "/witz - no vrzehl i en witz\n"
     "/hond - no schick i's bildle von em hond\n")
+    "/katz - no schick i's bildle vorer katz\n")
 
 
 def deilapp(update, context):
@@ -73,11 +74,11 @@ def hond(update, context):
     chat_id = update.message.chat_id
     context.bot.send_photo(chat_id=chat_id, photo=url)
 
-def gruss(update, context):
-    gruss_list = ['Hallöle', 'Servus', 'Grües di', 'Daag']  
-    user = update.message.from_user
-    message = random.choice(gruss_list)+' '+user.first_name+'!'
-    update.message.reply_text(message)
+def katz(update, context):
+    gruss_list = ['Hallöle!', 'Servus!', 'Grüess di!', 'Daag!', 'Heiligs Blechle!', 'Du kosch mir mol de Schue uffblosa!']
+    url = "https://cataas.com/cat/says/"+random.choice(gruss_list)
+    chat_id = update.message.chat_id
+    context.bot.send_photo(chat_id=chat_id, photo=url)
 
 def alarm(context):
     """Send the alarm message."""
