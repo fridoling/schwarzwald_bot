@@ -160,7 +160,7 @@ def main():
     dp.add_handler(CommandHandler('start', start))
     dp.add_handler(CommandHandler('witz', witz))
     dp.add_handler(CommandHandler('hond', hond))
-    dp.add_handler(CommandHandler('gruss', gruss))
+    dp.add_handler(CommandHandler('katz', katz))
     dp.add_handler(CommandHandler('wetter', wetter))
     dp.add_handler(CommandHandler("set", set_timer,
                                   pass_args=True,
