@@ -31,7 +31,7 @@ def wetter(update, context):
     elif description == "overcast clouds":
         message += ' Onds isch bedeckt.'
     elif description == "clear sky":
-        message += ' Dr Himmel isch klar.'
+        message += ' Koi Welkle am Hemmel.'
     elif description == "few clouds":
         message += ' Onds hot faschd koine wolke.'
     elif description == "scattered clouds":
