@@ -82,11 +82,11 @@ def katz(update, context):
 
 def tscholl(update, context):
     chat_id = update.message.chat_id
-    context.bot.send_photo(chat_id=chat_id, photo="/app/images/tscholl.jpg", caption="Hallöle!")
+    context.bot.send_photo(chat_id=chat_id, photo=open("/app/images/tscholl.jpg", "rb"), caption="Hallöle!")
 
 def grischi(update, context):
     chat_id = update.message.chat_id
-    context.bot.send_photo(chat_id=chat_id, photo="/app/images/grischi.jpg", caption="Servus!")
+    context.bot.send_photo(chat_id=chat_id, photo=open("/app/images/grischi.jpg", "rb"), caption="Servus!")
 
 def alarm(context):
     """Send the alarm message."""
