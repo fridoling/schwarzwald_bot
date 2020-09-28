@@ -80,6 +80,14 @@ def katz(update, context):
     chat_id = update.message.chat_id
     context.bot.send_photo(chat_id=chat_id, photo=url)
 
+def tscholl(update, context):
+    chat_id = update.message.chat_id
+    context.bot.send_photo(chat_id=chat_id, photo="../images/tscholl.jpg", caption="Hallöle!")
+
+def grischi(update, context):
+    chat_id = update.message.chat_id
+    context.bot.send_photo(chat_id=chat_id, photo="../images/grischi.jpg", caption="Servus!")
+
 def alarm(context):
     """Send the alarm message."""
     job = context.job
@@ -161,6 +169,8 @@ def main():
     dp.add_handler(CommandHandler('witz', witz))
     dp.add_handler(CommandHandler('hond', hond))
     dp.add_handler(CommandHandler('katz', katz))
+    dp.add_handler(CommandHandler('tscholl', tscholl))
+    dp.add_handler(CommandHandler('grischi', grischi))
     dp.add_handler(CommandHandler('wetter', wetter))
     dp.add_handler(CommandHandler("set", set_timer,
                                   pass_args=True,
