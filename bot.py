@@ -80,13 +80,21 @@ def katz(update, context):
     chat_id = update.message.chat_id
     context.bot.send_photo(chat_id=chat_id, photo=url)
 
+def get_photo(pattern):
+    images = glob.glob("/app/images/"+pattern+"*.jpg")
+    return random.choice(images)
+
 def tscholl(update, context):
     chat_id = update.message.chat_id
-    context.bot.send_photo(chat_id=chat_id, photo=open("/app/images/tscholl.jpg", "rb"), caption="Hallöle!")
+    context.bot.send_photo(chat_id=chat_id, photo=open(get_photo("tscholl"), "rb"), caption="Hallöle!")
 
 def grischi(update, context):
     chat_id = update.message.chat_id
-    context.bot.send_photo(chat_id=chat_id, photo=open("/app/images/grischi.jpg", "rb"), caption="Servus!")
+    context.bot.send_photo(chat_id=chat_id, photo=open(get_photo("grischi"), "rb"), caption="Hallöle!")
+
+def petzi(update, context):
+    chat_id = update.message.chat_id
+    context.bot.send_photo(chat_id=chat_id, photo=open(get_photo("petzi"), "rb"), caption="Hallöle!")
 
 def alarm(context):
     """Send the alarm message."""
@@ -171,6 +179,7 @@ def main():
     dp.add_handler(CommandHandler('katz', katz))
     dp.add_handler(CommandHandler('tscholl', tscholl))
     dp.add_handler(CommandHandler('grischi', grischi))
+    dp.add_handler(CommandHandler('petzi', grischi))
     dp.add_handler(CommandHandler('wetter', wetter))
     dp.add_handler(CommandHandler("set", set_timer,
                                   pass_args=True,
